@@ -2,11 +2,13 @@ package com.fiap.ec.backend_consultas.controller;
 
 import com.fiap.ec.backend_consultas.model.Especialidade;
 import com.fiap.ec.backend_consultas.service.EspecialidadeService;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+
+@RestController
+@RequestMapping("/especialidades")
+@CrossOrigin
 
 public class EspecialidadeController {
     private final EspecialidadeService service;
