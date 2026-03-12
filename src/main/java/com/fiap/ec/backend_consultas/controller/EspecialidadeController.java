@@ -9,20 +9,26 @@ import java.util.List;
 @RestController
 @RequestMapping("/especialidades")
 @CrossOrigin
-
 public class EspecialidadeController {
+
     private final EspecialidadeService service;
-    public EspecialidadeController(EspecialidadeService service){
+
+    public EspecialidadeController(EspecialidadeService service) {
         this.service = service;
     }
 
     @PostMapping
-    public Especialidade criar (@RequestBody Especialidade especialidade){
+    public Especialidade criar(@RequestBody Especialidade especialidade) {
         return service.salvar(especialidade);
     }
 
     @GetMapping
-    public List<Especialidade> listar(){
+    public List<Especialidade> listar() {
         return service.listar();
+    }
+
+    @GetMapping("/{id}")
+    public Especialidade buscarPorId(@PathVariable Long id) {
+        return service.buscarPorId(id);
     }
 }
